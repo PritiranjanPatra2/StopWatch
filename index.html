@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #myVideo {
+            /* position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100vw;
+            min-height: 100vh;
+            z-index: -1; 
+        }
+        .content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+        #hour, #minutes, #seconds, #ms {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 2rem;
+            text-align: center;
+            color: #333333;
+            z-index: 1; 
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #007BFF;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1; 
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #003f7f;
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        div {
+            text-align: center;
+            z-index: 1;
+        }
+
+        #start, #stop, #reset {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="stop (2).mp4" type="video/mp4" >
+        
+    </video>
+
+    <div>
+        <div id="hour">00</div>
+        <div id="minutes">00</div>
+        <div id="seconds">00</div>
+        <div id="ms">00</div>
+    </div>
+    <div>
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+    <div class="content">
+        <h1>Welcome to the Timer App</h1>
+        <p>This application allows you to start, stop, and reset a timer with ease. Whether you are tracking your workout, managing your study sessions, or timing any activity, our intuitive interface makes it simple to use. Enjoy the seamless integration with a beautiful background video that enhances your experience.</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
